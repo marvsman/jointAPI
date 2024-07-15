@@ -1,5 +1,11 @@
 # @marvsman/jointapi
 
+## 1.1.3
+
+### Patch Changes
+
+- f5dc581: added release command
+
 ## 1.1.2
 
 ### Patch Changes

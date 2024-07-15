@@ -1,5 +1,11 @@
 # @marvsman/jointapi
 
+## 1.1.4
+
+### Patch Changes
+
+- 7e7ea0d: exported config type
+
 ## 1.1.3
 
 ### Patch Changes

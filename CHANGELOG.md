@@ -1,5 +1,12 @@
 # @marvsman/jointapi
 
+## 1.1.7
+
+### Patch Changes
+
+- 08a44e0: updated actions again
+- fb038e9: changed dist visibility
+
 ## 1.1.5
 
 ### Patch Changes

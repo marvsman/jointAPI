@@ -9,7 +9,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsup src/index.ts --format cjs,esm  --dts",
     "run": "tsc && npx node --env-file ./src/.env dist/index.js ",
-    "lint": "tsc"
+    "lint": "tsc",
+    "release": "pnpm publish --access public"
   },
   "keywords": [],
   "author": "",

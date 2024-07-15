@@ -1,5 +1,11 @@
 # @marvsman/jointapi
 
+## 1.1.5
+
+### Patch Changes
+
+- 8bdef3d: git again..
+
 ## 1.1.4
 
 ### Patch Changes

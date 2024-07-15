@@ -1,5 +1,5 @@
-export { SettingsState } from './settings.js';
-export { PhilipsTV } from './philipstv.js';
+export { SettingsState,  } from './settings.js';
+export { PhilipsTV, PhilipsTVConfig, Authentication } from './philipstv.js';
 export { AmbilightState } from './ambilight.js';
 
 // import {Authentication, PhilipsTV, PhilipsTVConfig} from "./philipstv.js";

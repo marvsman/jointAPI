@@ -178,7 +178,7 @@ export class PhilipsTV {
         if (this.mac) {
             for (let i = 0; i < this.config.wakeOnLanRequests; i++) {
                 // @ts-ignore
-                wol.wake(this.mac, { address: this.config.broadcastIP }, (this, error) => {
+                wol.wake(this.mac, { address: this.config.broadcastIP }, (error) => {
                     if (error) {
                         console.log('wakeOnLan: error: ' + error);
                     }

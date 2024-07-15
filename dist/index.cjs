@@ -37,13 +37,13 @@ __export(src_exports, {
 module.exports = __toCommonJS(src_exports);
 
 // src/settings.ts
-var import_node_fs = __toESM(require("fs"));
+var import_node_fs = __toESM(require("fs"), 1);
 
 // src/philipstv.ts
-var import_wake_on_lan = __toESM(require("wake_on_lan"));
+var import_wake_on_lan = __toESM(require("wake_on_lan"), 1);
 
 // src/requestHelpers.ts
-var import_request = __toESM(require("request"));
+var import_request = __toESM(require("request"), 1);
 async function doRequest(method, url, body = "", auth) {
   return new Promise((resolve, reject) => {
     const payload = {
@@ -82,7 +82,7 @@ async function post(url, body = "", auth) {
 }
 
 // src/cmds/auth.ts
-var import_crypto = __toESM(require("crypto"));
+var import_crypto = __toESM(require("crypto"), 1);
 var secret_key = "JCqdN5AcnAHgJYseUn7ER5k3qgtemfUvMRghQpTfTZq7Cvv8EPQPqfz6dDxPQPSu4gKFPWkJGw32zyASgJkHwCjU";
 function prepareAuthenticationRequestPayload(timestamp, pin, apiUser, apiPass) {
   const hash = import_crypto.default.createHmac("sha1", Buffer.from(secret_key, "base64").toString()).update(timestamp + pin).digest("hex");

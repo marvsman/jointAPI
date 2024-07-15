@@ -1,49 +1,11 @@
-"use strict";
-var __create = Object.create;
-var __defProp = Object.defineProperty;
-var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-var __getOwnPropNames = Object.getOwnPropertyNames;
-var __getProtoOf = Object.getPrototypeOf;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __export = (target, all) => {
-  for (var name in all)
-    __defProp(target, name, { get: all[name], enumerable: true });
-};
-var __copyProps = (to, from, except, desc) => {
-  if (from && typeof from === "object" || typeof from === "function") {
-    for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-  }
-  return to;
-};
-var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
-  // If the importer is in node compatibility mode or this is not an ESM
-  // file that has been converted to a CommonJS file using a Babel-
-  // compatible transform (i.e. "__esModule" has not been set), then set
-  // "default" to the CommonJS "module.exports" for node compatibility.
-  isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
-  mod
-));
-var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
-
-// src/index.ts
-var src_exports = {};
-__export(src_exports, {
-  AmbilightState: () => AmbilightState,
-  PhilipsTV: () => PhilipsTV,
-  SettingsState: () => SettingsState
-});
-module.exports = __toCommonJS(src_exports);
-
 // src/settings.ts
-var import_node_fs = __toESM(require("fs"));
+import fs from "fs";
 
 // src/philipstv.ts
-var import_wake_on_lan = __toESM(require("wake_on_lan"));
+import wol from "wake_on_lan";
 
 // src/requestHelpers.ts
-var import_request = __toESM(require("request"));
+import request from "request";
 async function doRequest(method, url, body = "", auth) {
   return new Promise((resolve, reject) => {
     const payload = {
@@ -59,7 +21,7 @@ async function doRequest(method, url, body = "", auth) {
       payload.auth = auth;
     }
     try {
-      (0, import_request.default)(payload, (error, res, body2) => {
+      request(payload, (error, res, body2) => {
         console.log("doRequest", res.body);
         if (!error && res.statusCode === 200) {
           resolve(body2);
@@ -82,10 +44,10 @@ async function post(url, body = "", auth) {
 }
 
 // src/cmds/auth.ts
-var import_crypto = __toESM(require("crypto"));
+import crypto from "crypto";
 var secret_key = "JCqdN5AcnAHgJYseUn7ER5k3qgtemfUvMRghQpTfTZq7Cvv8EPQPqfz6dDxPQPSu4gKFPWkJGw32zyASgJkHwCjU";
 function prepareAuthenticationRequestPayload(timestamp, pin, apiUser, apiPass) {
-  const hash = import_crypto.default.createHmac("sha1", Buffer.from(secret_key, "base64").toString()).update(timestamp + pin).digest("hex");
+  const hash = crypto.createHmac("sha1", Buffer.from(secret_key, "base64").toString()).update(timestamp + pin).digest("hex");
   return {
     auth: {
       pin,
@@ -382,7 +344,7 @@ var PhilipsTV = class {
   async wakeOnLan() {
     if (this.mac) {
       for (let i = 0; i < this.config.wakeOnLanRequests; i++) {
-        import_wake_on_lan.default.wake(this.mac, { address: this.config.broadcastIP }, (error) => {
+        wol.wake(this.mac, { address: this.config.broadcastIP }, (error) => {
           if (error) {
             console.log("wakeOnLan: error: " + error);
           }
@@ -565,7 +527,7 @@ var SettingsState = class {
   }
   async writeToFile(data) {
     try {
-      import_node_fs.default.writeFileSync("./out.json", data);
+      fs.writeFileSync("./out.json", data);
       console.log("File written successfully");
     } catch (err) {
       throw new Error(err);
@@ -579,9 +541,8 @@ var SettingsState = class {
     return p;
   }
 };
-// Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
+export {
   AmbilightState,
   PhilipsTV,
   SettingsState
-});
+};

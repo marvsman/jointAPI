@@ -1,0 +1,105 @@
+{
+  "values": [
+    {
+      "value": {
+        "Nodeid": 2131230838,
+        "Controllable": true,
+        "Available": true,
+        "string_id": "Bildeinstellung",
+        "data": {
+          "selected_item": 10,
+          "enum_values": [
+            {
+              "enum_id": 1,
+              "controllable": true,
+              "available": false,
+              "string_id": "org.droidtv.ui.strings.R.string.MAIN_PERSONAL"
+            },
+            {
+              "enum_id": 2,
+              "controllable": true,
+              "available": false,
+              "string_id": "org.droidtv.ui.strings.R.string.MAIN_VIVID"
+            },
+            {
+              "enum_id": 3,
+              "controllable": true,
+              "available": false,
+              "string_id": "org.droidtv.ui.strings.R.string.MAIN_NATURAL"
+            },
+            {
+              "enum_id": 4,
+              "controllable": true,
+              "available": false,
+              "string_id": "org.droidtv.ui.strings.R.string.MAIN_STANDARD",
+              "icon": "org.droidtv.ui.tvwidget2k15.R.drawable.eco_16x12_146"
+            },
+            {
+              "enum_id": 5,
+              "controllable": true,
+              "available": false,
+              "string_id": "org.droidtv.ui.strings.R.string.MAIN_MOVIE"
+            },
+            {
+              "enum_id": 6,
+              "controllable": true,
+              "available": false,
+              "string_id": "org.droidtv.ui.strings.R.string.MAIN_GAME"
+            },
+            {
+              "enum_id": 14,
+              "controllable": true,
+              "available": false,
+              "string_id": "org.droidtv.ui.strings.R.string.MAIN_MONITOR"
+            },
+            {
+              "enum_id": 13,
+              "controllable": true,
+              "available": true,
+              "string_id": "org.droidtv.ui.strings.R.string.MAIN_HDR_PERSONAL"
+            },
+            {
+              "enum_id": 9,
+              "controllable": true,
+              "available": true,
+              "string_id": "org.droidtv.ui.strings.R.string.MAIN_HDR_VIVID"
+            },
+            {
+              "enum_id": 10,
+              "controllable": true,
+              "available": true,
+              "string_id": "org.droidtv.ui.strings.R.string.MAIN_HDR_NATURAL"
+            },
+            {
+              "enum_id": 11,
+              "controllable": true,
+              "available": true,
+              "string_id": "org.droidtv.ui.strings.R.string.MAIN_HDR_MOVIE"
+            },
+            {
+              "enum_id": 12,
+              "controllable": true,
+              "available": true,
+              "string_id": "org.droidtv.ui.strings.R.string.MAIN_HDR_GAME"
+            },
+            {
+              "enum_id": 7,
+              "controllable": true,
+              "available": false,
+              "string_id": "org.droidtv.ui.strings.R.string.MAIN_ISF_DAY",
+              "icon": "org.droidtv.ui.tvwidget2k15.R.drawable.isf_16x12_250"
+            },
+            {
+              "enum_id": 8,
+              "controllable": true,
+              "available": false,
+              "string_id": "org.droidtv.ui.strings.R.string.MAIN_ISF_NIGHT",
+              "icon": "org.droidtv.ui.tvwidget2k15.R.drawable.isf_16x12_250"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "version": 0
+}

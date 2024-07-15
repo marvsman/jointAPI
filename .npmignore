@@ -1,0 +1,7 @@
+.gitignore
+.idea/
+.git/
+.github/
+out.json
+tsconfig.json
+/src
